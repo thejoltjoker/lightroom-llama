@@ -1,0 +1,7 @@
+curl http://localhost:11434/api/generate -d '{
+  "model": "minicpm-v",
+  "prompt": "Why is the sky blue?",
+  "images": ["image"],
+  "stream": false,
+  "keep_alive": "15m"
+}'
