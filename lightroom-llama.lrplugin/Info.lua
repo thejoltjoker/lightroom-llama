@@ -1,11 +1,11 @@
 return {
     VERSION = {
-        major = 1,
-        minor = 0,
-        revision = 0
+        major = 0,
+        minor = 1,
+        revision = 1
     },
     LrPluginName = "Lightroom Llama",
-    LrPluginDescription = "Description of your Lightroom plugin",
+    LrPluginDescription = "Generate metadata for your photos with ollama, directly in Lightroom",
     LrToolkitIdentifier = "com.thejoltjoker.lightroom.llama",
     LrPluginInfoUrl = "https://github.com/thejoltjoker/lightroom-llama",
     LrPluginInfoUrlProvider = "http://www.thejoltjoker.com",
