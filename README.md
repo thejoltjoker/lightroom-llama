@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./screenshot.png" width=300>
+  <img src="./screenshot.png" width=400>
   <br/>
   Lightroom Llama
 </h1>
