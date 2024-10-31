@@ -1,73 +1,47 @@
-<h1 align="center">
-  <img src="./screenshot.png" width=400>
-  <br/>
-  Lightroom Llama
-</h1>
+# Svelte + TS + Vite
 
-<h4 align="center">Generate metadata for your photos with ollama, directly in Lightroom</h4>
-<p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
-</p>
+This template should help get you started developing with Svelte and TypeScript in Vite.
 
-## Key Features
+## Recommended IDE Setup
 
-- Generate metadata for your photos with ollama, directly in Lightroom
-- Great for generating titles and captions for your stock photos
-- Local generation, no internet required and your photos aren't uploaded anywhere
+[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
 
-## How To Use
+## Need an official Svelte framework?
 
-### Installation
+Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
 
-1. Clone or download the latest version of Lightroom Llama from [here](https://github.com/thejoltjoker/lightroom-llama).
-2. Open Adobe Lightroom Classic
-3. Go to File > Plug-in Manager
-4. Click the "Add" button in the bottom left
-5. Navigate to the downloaded plugin folder and select the `.lrplugin` file
-6. Click "Done" to close the Plug-in Manager
+## Technical considerations
 
-### Prerequisites
+**Why use this over SvelteKit?**
 
-- Adobe Lightroom Classic
-- [Ollama](https://ollama.ai/) installed and running on your computer
-- An LLM model downloaded in Ollama (e.g., Llama 2)
+- It brings its own routing solution which might not be preferable for some users.
+- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
 
-### Ollama setup
-1. Open a terminal
-2. Install [Homebrew](https://brew.sh/) if you don't have it already
-   1. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-3. `brew install ollama`
-4. `ollama run minicpm-v`
+This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
 
-For latest instructions on how to install and run Ollama, see [here](https://github.com/ollama/ollama).
+Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
 
-## TODO
+**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
 
-- [ ] Add support for more LLM models
-- [ ] Implement batch processing for multiple photos
-- [ ] Add customizable prompt templates
-- [ ] Create settings panel for model configuration
-- [ ] Improve error handling and user feedback
+Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
 
-## Credits
+**Why include `.vscode/extensions.json`?**
 
-- [Ollama](https://ollama.com/).
+Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
 
-## Related
+**Why enable `allowJs` in the TS template?**
 
-- [ChatGPT for Maya](https://github.com/thejoltjoker/chatgpt-for-maya) - Autodesk Maya plugin for context aware chatting with ChatGPT. Get tips, automate tasks and run code.
+While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
 
-## You may also like...
+**Why is HMR not preserving my local component state?**
 
-- [Lightroom Power Collection](https://github.com/thejoltjoker/lightroom-power-collection) - Lightroom plugin to create a smart collection to semi-automate publishing.
+HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
 
-- [Lightroom Workflow](https://github.com/thejoltjoker/lightroom-workflow) - My Lightroom workflow and presets that I have created and use for editing, organizing and exporting my photos.
+If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
+```ts
+// store.ts
+// An extremely simple external store
+import { writable } from 'svelte/store'
+export default writable(0)
+```
