@@ -10,7 +10,7 @@
 					<img
 						src="https://images.unsplash.com/photo-1542856204-00101eb6def4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGxhbWF8ZW58MHx8MHx8fDA%3D"
 						alt="Llama"
-						class="border border-lightroom-950 border-2"
+						class=" border-lightroom-950 border-2"
 					/>
 				</div>
 				<div class="flex flex-col gap-4">

@@ -6,11 +6,21 @@
 		font-family: theme('fontFamily.sans');
 		background-color: theme('colors.lightroom.100');
 	}
+	section {
+		@apply min-h-[80vh] py-16 flex items-center justify-center flex-col gap-6 text-lightroom-950;
+	}
+
+	p {
+		@apply text-lg;
+	}
+	.hljs {
+		@apply !p-8 rounded-xl;
+	}
 }
 
 @layer components {
 	.container {
-		@apply max-w-screen-md mx-auto;
+		@apply max-w-screen-md mx-auto w-full flex flex-col gap-6 items-center justify-center;
 	}
 
 	.button-base {

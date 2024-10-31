@@ -6,8 +6,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Noto Color Emoji', 'Figtree Variable', 'sans-serif'],
-				mono: ['Noto Color Emoji', 'JetBrains Mono Variable', 'monospace'],
+				sans: ['Figtree Variable', 'Noto Color Emoji', 'sans-serif'],
+				mono: ['JetBrains Mono Variable', 'Noto Color Emoji', 'monospace'],
 				emoji: ['Noto Color Emoji', 'Noto Color Emoji', 'sans-serif']
 			},
 			colors: {
@@ -28,6 +28,6 @@ export default {
 			}
 		}
 	},
-
+	safelist: ['trigger'],
 	plugins: [require('@tailwindcss/forms')]
 } as Config;

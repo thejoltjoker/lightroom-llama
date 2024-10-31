@@ -37,6 +37,7 @@
 		"@fontsource-variable/figtree": "^5.1.1",
 		"@fontsource-variable/jetbrains-mono": "^5.1.1",
 		"@fontsource/noto-color-emoji": "^5.1.0",
+		"bits-ui": "^0.21.16",
 		"classnames": "^2.5.1",
 		"svelte-highlight": "^7.7.0"
 	}
