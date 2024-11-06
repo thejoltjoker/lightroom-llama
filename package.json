@@ -39,6 +39,7 @@
 		"@fontsource/noto-color-emoji": "^5.1.0",
 		"bits-ui": "^0.21.16",
 		"classnames": "^2.5.1",
+		"lucide-svelte": "^0.454.0",
 		"svelte-highlight": "^7.7.0"
 	}
 }

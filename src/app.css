@@ -6,15 +6,18 @@
 		font-family: theme('fontFamily.sans');
 		background-color: theme('colors.lightroom.100');
 	}
+	h2 {
+		@apply text-5xl font-bold;
+	}
 	section {
 		@apply min-h-[80vh] py-16 flex items-center justify-center flex-col gap-6 text-lightroom-950;
 	}
 
 	p {
-		@apply text-lg;
+		@apply text-lg my-3;
 	}
 	.hljs {
-		@apply !p-8 rounded-xl;
+		@apply !p-8 rounded-3xl;
 	}
 }
 
@@ -28,9 +31,12 @@
 	}
 
 	.button {
-		@apply button-base bg-lightroom-green text-white;
+		@apply button-base bg-lr-blue-400 text-white;
 		&:hover {
-			@apply bg-lightroom-green/80;
+			@apply bg-lr-blue-400/80;
 		}
+	}
+	.pill {
+		@apply bg-lr-blue-500/30 text-lr-blue-900 px-2 py-1 rounded-full text-xs font-light;
 	}
 }

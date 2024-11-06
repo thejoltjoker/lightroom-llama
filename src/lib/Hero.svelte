@@ -1,5 +1,6 @@
 <script>
 	import OsWindow from './OsWindow.svelte';
+	import llamaPicture from '../assets/llama.jpg';
 </script>
 
 <div class="container flex flex-col items-center justify-center h-[80vh] gap-3">
@@ -7,11 +8,7 @@
 		<OsWindow title="Lightroom Llama">
 			<div class="grid grid-cols-2 gap-6 p-6">
 				<div class="">
-					<img
-						src="https://images.unsplash.com/photo-1542856204-00101eb6def4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGxhbWF8ZW58MHx8MHx8fDA%3D"
-						alt="Llama"
-						class=" border-lightroom-950 border-2"
-					/>
+					<img src={llamaPicture} alt="Llama" class=" border-lightroom-950 border-2" />
 				</div>
 				<div class="flex flex-col gap-4">
 					<fieldset class="flex flex-col">
@@ -19,7 +16,7 @@
 						<input
 							type="text"
 							id="title"
-							value="Two llamas kissing in the mountains"
+							value="A Confused Llama"
 							class="rounded-md border-lightroom-400"
 						/>
 					</fieldset>
