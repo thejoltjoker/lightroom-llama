@@ -186,7 +186,9 @@ local function getLlmKeywordsFromPhoto(photo)
     if allKeywords then
         for _, keyword in ipairs(allKeywords) do
             local parent = keyword:getParent()
-            if parent and parent:getName() == "llm" then
+local llmKeywordName = "llm"
+...
+            if parent and parent:getName() == llmKeywordName then
                 table.insert(llmKeywords, keyword:getName())
             end
         end
