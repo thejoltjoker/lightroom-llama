@@ -166,7 +166,7 @@ end
 local function addKeywordsWithParent(catalog, photo, keywords)
     if keywords and type(keywords) == "table" then
         -- First create or get the parent 'llm' keyword
-        local llmKeyword = catalog:createKeyword("llm", nil, true, nil, true)
+        local llmKeyword = catalog:createKeyword("llm", nil, false, nil, true)
 
         for _, keyword in ipairs(keywords) do
             if keyword and keyword ~= "" then
